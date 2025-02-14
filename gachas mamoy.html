@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Te amo muchísimo mi amor!! ❤️️🥰</title>
+    <title> Te amo muchisimo mi amor!! ❤️️🥰</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background: url('nosotros.webp') no-repeat center center/cover;
+            background: url('nosotros') no-repeat center center/cover;
             color: white;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0;
         }
 
         .container {
@@ -69,15 +68,58 @@
 </head>
 <body>
     <div class="container">
-        <h1>❤️️ Gracias mi amorcitoo! ❤️️</h1>
-        <p>Gachas mamoy por decir que sí, te amo como no tienes idea, espero que este sea el primero de muchos San Valentines más. Te amo mi amorcito. ♡︎♡︎</p>
-        <img src="WhatsApp Image 2025-02-14 at 12.22.04 AM (1).jpeg" alt="Romantic Love" class="love-img">
+        <h1> ❤️️ Gracias mi amorcitoo! ❤️️</h1>
+        <p> Gachas mamoy por decir q si, te amo como no tienes idea, espero q este sea el primero de muchos San Valentines más,
+            q siempre podamos pasar juntitos tu y yo, q siempre estemos el uno para el otro, gracias por todas las experiencias, recuerdos y momentos tan lindos q me has dado, gracias por permitirme pasar esta fecha contigo mi amorcito, te amo mi amorcito, espero poder hacer este dia significativo para ti, y espero 
+           q te haya gustado este pequeño detalle, te amo mi amor. ♡︎♡︎ <time datetime=""></time>
+    </p>
+         <br>
+         <img src="WhatsApp Image 2025-02-14 at 12.22.04 AM (1).jpeg" alt="Romantic Love" class="love-img">
         <img src="WhatsApp Image 2025-02-13 at 11.01.48 PM.jpeg" alt="Romantic Love" class="love-img">
         <img src="WhatsApp Image 2025-02-13 at 11.01.49 PM.jpeg" alt="Romantic Love" class="love-img">
+        <br>
         <img src="WhatsApp Image 2025-02-14 at 12.30.15 AM.jpeg" alt="Romantic Love" class="love-img">
         <img src="nosotros.webp" alt="Romantic Love" class="love-img">
         <img src="WhatsApp Image 2025-02-14 at 12.30.14 AM.jpeg" alt="Romantic Love" class="love-img">
-        <a href="mamoy.html" class="btn">Volver</a>
+        <a href="mamoy.html"
+        class="btn">Volver
     </div>
+    <audio id="musica" autoplay>
+        <source src="08 My Kind of Woman.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <script>
+        document.addEventListener("click", function() {
+            let musica = document.getElementById("musica");
+    
+            if (musica.paused) {
+                musica.play();
+            }
+        });
+    
+        // Guardar el tiempo de la música antes de cambiar de página
+        window.addEventListener("beforeunload", function() {
+            let musica = document.getElementById("musica");
+            localStorage.setItem("audioTime", musica.currentTime);
+        });
+    
+        // Recuperar el tiempo de la música cuando se cargue la nueva página
+        window.addEventListener("load", function() {
+            let musica = document.getElementById("musica");
+            let savedTime = localStorage.getItem("audioTime");
+    
+            if (savedTime) {
+                musica.currentTime = savedTime;
+            }
+        });
+    </script>
+    
+    <style>
+        audio {
+            display: none; /* Oculta el reproductor */
+        }
+    </style>
+    
 </body>
 </html>

@@ -8,28 +8,27 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background: #2d012d;
+            background: #2d012d; 
             color: white;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0;
         }
 
         .container {
-            background: rgba(255, 20, 147, 0.9);
+            background: rgba(255, 20, 147, 0.9); 
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5); 
             animation: fadeIn 2s ease-in-out;
         }
 
         h1 {
             font-size: 2.5em;
             margin-bottom: 10px;
-            color: #ffdde1;
+            color: #ffdde1; 
         }
 
         p {
@@ -41,8 +40,6 @@
             display: flex;
             gap: 15px;
             position: relative;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
         button {
@@ -55,17 +52,17 @@
         }
 
         .yes {
-            background: #800080;
+            background: #800080; 
             color: white;
             font-size: 1.2em;
         }
 
         .yes:hover {
-            background: #ff0000;
+            background: #ff0000; 
         }
 
         .no {
-            background: brown;
+            background: brown; 
             color: white;
             position: absolute;
             transition: 0.3s;
@@ -81,9 +78,9 @@
 <body>
     <div class="container">
         <h1>❤️️ ¿Quieres ser mi San Valentín mamoy? ❤️️</h1>
-        <p>Eres la persona más increíble, hermosa y maravillosa de este mundo, y me gustaría que fueras mi San Valentín, mi vida. ❤️</p>
+        <p>Eres la persona más increíble, hermosa y maravillosa de este mundo, una persona con tantas cualidades y talentos, una persona de la q me enamoro cada dia más, y de la q estoy dispuesto a dar todo con tal de estar a su lado, y la persona q me gustaria q fuera mi San Valentin. ❤️</p>
         <div class="buttons">
-            <button class="yes" onclick="irAFelicidad()">Tiii 🥰</button>
+            <button class="yes" onclick="irAFelicidad()">Tiii 🥰</button>  
             <button class="no" onmouseover="moverNo()">Ño :(</button>
         </div>
     </div>
@@ -92,11 +89,12 @@
         let tamanoSi = 1.2;
 
         function irAFelicidad() {
-            window.location.href = "gachas mamoy.html"; // Asegúrate de tener esta página.
+            window.location.href = "gachas mamoy.html";
         }
 
         function moverNo() {
             let botonNo = document.querySelector(".no");
+            
             let botonSi = document.querySelector(".yes");
 
             // Hace que el botón "No" se mueva aleatoriamente
@@ -111,5 +109,44 @@
             botonSi.style.fontSize = `${tamanoSi}em`;
         }
     </script>
+    <audio id="musica" autoplay>
+        <source src="08 My Kind of Woman.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <script>
+        document.addEventListener("click", function() {
+            let musica = document.getElementById("musica");
+    
+            if (musica.paused) {
+                musica.play();
+            }
+        });
+    
+        // Guardar el tiempo de la música antes de cambiar de página
+        window.addEventListener("beforeunload", function() {
+            let musica = document.getElementById("musica");
+            localStorage.setItem("audioTime", musica.currentTime);
+        });
+    
+        // Recuperar el tiempo de la música cuando se cargue la nueva página
+        window.addEventListener("load", function() {
+            let musica = document.getElementById("musica");
+            let savedTime = localStorage.getItem("audioTime");
+    
+            if (savedTime) {
+                musica.currentTime = savedTime;
+            }
+        });
+    </script>
+    
+    <style>
+        audio {
+            display: none; /* Oculta el reproductor */
+        }
+    </style>
+    
+    
+    
 </body>
 </html>
