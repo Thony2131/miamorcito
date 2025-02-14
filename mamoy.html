@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín mamoy? ❤️️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: #2d012d;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 20, 147, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #ffdde1;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            position: relative;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .yes {
+            background: #800080;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .yes:hover {
+            background: #ff0000;
+        }
+
+        .no {
+            background: brown;
+            color: white;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>❤️️ ¿Quieres ser mi San Valentín mamoy? ❤️️</h1>
+        <p>Eres la persona más increíble, hermosa y maravillosa de este mundo, y me gustaría que fueras mi San Valentín, mi vida. ❤️</p>
+        <div class="buttons">
+            <button class="yes" onclick="irAFelicidad()">Tiii 🥰</button>
+            <button class="no" onmouseover="moverNo()">Ño :(</button>
+        </div>
+    </div>
+
+    <script>
+        let tamanoSi = 1.2;
+
+        function irAFelicidad() {
+            window.location.href = "gachas mamoy.html"; // Asegúrate de tener esta página.
+        }
+
+        function moverNo() {
+            let botonNo = document.querySelector(".no");
+            let botonSi = document.querySelector(".yes");
+
+            // Hace que el botón "No" se mueva aleatoriamente
+            let x = Math.random() * (window.innerWidth - 200);
+            let y = Math.random() * (window.innerHeight - 200);
+            botonNo.style.position = "absolute";
+            botonNo.style.left = `${x}px`;
+            botonNo.style.top = `${y}px`;
+
+            // Hace que el botón "Sí" crezca
+            tamanoSi += 0.3;
+            botonSi.style.fontSize = `${tamanoSi}em`;
+        }
+    </script>
+</body>
+</html>
